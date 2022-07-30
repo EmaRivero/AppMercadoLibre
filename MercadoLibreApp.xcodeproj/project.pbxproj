@@ -1,0 +1,515 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		20487E2D2892C83D005197FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20487E2C2892C83D005197FC /* AppDelegate.swift */; };
+		20487E2F2892C83D005197FC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20487E2E2892C83D005197FC /* SceneDelegate.swift */; };
+		20487E362892C83E005197FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20487E352892C83E005197FC /* Assets.xcassets */; };
+		20487E392892C83E005197FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20487E372892C83E005197FC /* LaunchScreen.storyboard */; };
+		209856202894044F009169FB /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2098561F2894044F009169FB /* UIImageExtension.swift */; };
+		209856222894048C009169FB /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209856212894048C009169FB /* ProductDetailViewController.swift */; };
+		20BFAF032892DB8500BA45F1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BFAF022892DB8500BA45F1 /* Constants.swift */; };
+		20BFAF052892DC3500BA45F1 /* ProductList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BFAF042892DC3500BA45F1 /* ProductList.swift */; };
+		20BFAF072892DC6800BA45F1 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BFAF062892DC6800BA45F1 /* Product.swift */; };
+		20BFAF092892DFA600BA45F1 /* ProductListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BFAF082892DFA600BA45F1 /* ProductListViewController.swift */; };
+		20BFAF0B289326EC00BA45F1 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BFAF0A289326EC00BA45F1 /* ApiManager.swift */; };
+		AA9FEEB3579FB4EF5D21C8B9 /* Pods_MercadoLibreApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E605A1D1738C5ADE4790984 /* Pods_MercadoLibreApp.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		03A511FAA6CF36554F6DD0EB /* Pods-MercadoLibreApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MercadoLibreApp.release.xcconfig"; path = "Target Support Files/Pods-MercadoLibreApp/Pods-MercadoLibreApp.release.xcconfig"; sourceTree = "<group>"; };
+		127514701FA2EFED7858C66C /* Pods-MercadoLibreApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MercadoLibreApp.debug.xcconfig"; path = "Target Support Files/Pods-MercadoLibreApp/Pods-MercadoLibreApp.debug.xcconfig"; sourceTree = "<group>"; };
+		20487E292892C83D005197FC /* MercadoLibreApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MercadoLibreApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		20487E2C2892C83D005197FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		20487E2E2892C83D005197FC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		20487E352892C83E005197FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		20487E382892C83E005197FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		20487E3A2892C83E005197FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2098561F2894044F009169FB /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
+		209856212894048C009169FB /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
+		20BFAF022892DB8500BA45F1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		20BFAF042892DC3500BA45F1 /* ProductList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductList.swift; sourceTree = "<group>"; };
+		20BFAF062892DC6800BA45F1 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		20BFAF082892DFA600BA45F1 /* ProductListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewController.swift; sourceTree = "<group>"; };
+		20BFAF0A289326EC00BA45F1 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		4E605A1D1738C5ADE4790984 /* Pods_MercadoLibreApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MercadoLibreApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		20487E262892C83D005197FC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA9FEEB3579FB4EF5D21C8B9 /* Pods_MercadoLibreApp.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		20487E202892C83D005197FC = {
+			isa = PBXGroup;
+			children = (
+				20487E2B2892C83D005197FC /* MercadoLibreApp */,
+				20487E2A2892C83D005197FC /* Products */,
+				50A034C1102D043DD8AC13F0 /* Pods */,
+				D7FF0B85D7701DD22A398D5E /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		20487E2A2892C83D005197FC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				20487E292892C83D005197FC /* MercadoLibreApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		20487E2B2892C83D005197FC /* MercadoLibreApp */ = {
+			isa = PBXGroup;
+			children = (
+				20BFAF0C28932D3800BA45F1 /* Commons */,
+				20BFAF1128932DB800BA45F1 /* Modules */,
+				20487E2C2892C83D005197FC /* AppDelegate.swift */,
+				20487E2E2892C83D005197FC /* SceneDelegate.swift */,
+				20487E352892C83E005197FC /* Assets.xcassets */,
+				20487E372892C83E005197FC /* LaunchScreen.storyboard */,
+				20487E3A2892C83E005197FC /* Info.plist */,
+			);
+			path = MercadoLibreApp;
+			sourceTree = "<group>";
+		};
+		2098562328940491009169FB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				209856212894048C009169FB /* ProductDetailViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		20BFAF0C28932D3800BA45F1 /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				20BFAF0E28932D6C00BA45F1 /* Utils */,
+				20BFAF1428932DFE00BA45F1 /* Models */,
+				20BFAF0D28932D4900BA45F1 /* Networking */,
+			);
+			path = Commons;
+			sourceTree = "<group>";
+		};
+		20BFAF0D28932D4900BA45F1 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				20BFAF0A289326EC00BA45F1 /* ApiManager.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		20BFAF0E28932D6C00BA45F1 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				20BFAF022892DB8500BA45F1 /* Constants.swift */,
+				2098561F2894044F009169FB /* UIImageExtension.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		20BFAF1128932DB800BA45F1 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				20BFAF1228932DD000BA45F1 /* ProductList */,
+				20BFAF1628932E2F00BA45F1 /* ProductDetail */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		20BFAF1228932DD000BA45F1 /* ProductList */ = {
+			isa = PBXGroup;
+			children = (
+				20BFAF1328932DE500BA45F1 /* View */,
+			);
+			path = ProductList;
+			sourceTree = "<group>";
+		};
+		20BFAF1328932DE500BA45F1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				20BFAF082892DFA600BA45F1 /* ProductListViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		20BFAF1428932DFE00BA45F1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				20BFAF042892DC3500BA45F1 /* ProductList.swift */,
+				20BFAF062892DC6800BA45F1 /* Product.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		20BFAF1628932E2F00BA45F1 /* ProductDetail */ = {
+			isa = PBXGroup;
+			children = (
+				2098562328940491009169FB /* View */,
+			);
+			path = ProductDetail;
+			sourceTree = "<group>";
+		};
+		50A034C1102D043DD8AC13F0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				127514701FA2EFED7858C66C /* Pods-MercadoLibreApp.debug.xcconfig */,
+				03A511FAA6CF36554F6DD0EB /* Pods-MercadoLibreApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		D7FF0B85D7701DD22A398D5E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4E605A1D1738C5ADE4790984 /* Pods_MercadoLibreApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		20487E282892C83D005197FC /* MercadoLibreApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 20487E3D2892C83E005197FC /* Build configuration list for PBXNativeTarget "MercadoLibreApp" */;
+			buildPhases = (
+				CCED9379C473EEF21F7C0DD4 /* [CP] Check Pods Manifest.lock */,
+				20487E252892C83D005197FC /* Sources */,
+				20487E262892C83D005197FC /* Frameworks */,
+				20487E272892C83D005197FC /* Resources */,
+				F48911410FF5A907E9836DC2 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MercadoLibreApp;
+			productName = MercadoLibreApp;
+			productReference = 20487E292892C83D005197FC /* MercadoLibreApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		20487E212892C83D005197FC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					20487E282892C83D005197FC = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+				};
+			};
+			buildConfigurationList = 20487E242892C83D005197FC /* Build configuration list for PBXProject "MercadoLibreApp" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 20487E202892C83D005197FC;
+			productRefGroup = 20487E2A2892C83D005197FC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				20487E282892C83D005197FC /* MercadoLibreApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		20487E272892C83D005197FC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20487E392892C83E005197FC /* LaunchScreen.storyboard in Resources */,
+				20487E362892C83E005197FC /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		CCED9379C473EEF21F7C0DD4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MercadoLibreApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F48911410FF5A907E9836DC2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MercadoLibreApp/Pods-MercadoLibreApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MercadoLibreApp/Pods-MercadoLibreApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MercadoLibreApp/Pods-MercadoLibreApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		20487E252892C83D005197FC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20487E2D2892C83D005197FC /* AppDelegate.swift in Sources */,
+				20BFAF092892DFA600BA45F1 /* ProductListViewController.swift in Sources */,
+				209856222894048C009169FB /* ProductDetailViewController.swift in Sources */,
+				20BFAF052892DC3500BA45F1 /* ProductList.swift in Sources */,
+				20BFAF0B289326EC00BA45F1 /* ApiManager.swift in Sources */,
+				20487E2F2892C83D005197FC /* SceneDelegate.swift in Sources */,
+				20BFAF032892DB8500BA45F1 /* Constants.swift in Sources */,
+				20BFAF072892DC6800BA45F1 /* Product.swift in Sources */,
+				209856202894044F009169FB /* UIImageExtension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		20487E372892C83E005197FC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				20487E382892C83E005197FC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		20487E3B2892C83E005197FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		20487E3C2892C83E005197FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		20487E3E2892C83E005197FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 127514701FA2EFED7858C66C /* Pods-MercadoLibreApp.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MercadoLibreApp/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = EmaRivero.MercadoLibreApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		20487E3F2892C83E005197FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 03A511FAA6CF36554F6DD0EB /* Pods-MercadoLibreApp.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MercadoLibreApp/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = EmaRivero.MercadoLibreApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		20487E242892C83D005197FC /* Build configuration list for PBXProject "MercadoLibreApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				20487E3B2892C83E005197FC /* Debug */,
+				20487E3C2892C83E005197FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		20487E3D2892C83E005197FC /* Build configuration list for PBXNativeTarget "MercadoLibreApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				20487E3E2892C83E005197FC /* Debug */,
+				20487E3F2892C83E005197FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 20487E212892C83D005197FC /* Project object */;
+}
