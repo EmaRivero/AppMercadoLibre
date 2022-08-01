@@ -12,18 +12,17 @@ class ApiManager {
     
     static let shared = ApiManager()
     
-    func getList(query: String, completion: @escaping ([Product]) -> Void) {
+    func getCall(query: String, completionHandler: @escaping (AFDataResponse<Data?>) -> Void, errorHandler: @escaping (AFError) -> Void) {
         let url = "\(Constants.urlSearch)\(query)"
-        AF.request(url).responseData { response in
-            guard let data = response.data else { return }
-            let decoder = JSONDecoder()
-            decoder.keyDecodingStrategy = .convertFromSnakeCase
-            do {
-                let result = try decoder.decode(ProductList.self, from: data)
-                completion(result.results)
-            } catch {
-                print (error.localizedDescription)
+
+        AF.request(url).validate().response { response in
+            if let error = response.error {
+                errorHandler(error)
+            } else {
+                completionHandler(response)
             }
         }
     }
 }
+
+

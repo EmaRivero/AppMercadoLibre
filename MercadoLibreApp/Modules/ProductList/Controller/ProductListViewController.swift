@@ -11,6 +11,9 @@ import Alamofire
 class ProductListViewController: UIViewController {
     
     var list: [Product] = []
+    let cellIdentifier = "cellIdentifier"
+    var service = ProductListService()
+    var viewMargin: CGFloat = 20
     
     private lazy var productSearchBar: UISearchBar = {
         let aSearch = UISearchBar()
@@ -25,11 +28,11 @@ class ProductListViewController: UIViewController {
         aTable.translatesAutoresizingMaskIntoConstraints = false
         aTable.dataSource = self
         aTable.delegate = self
-        aTable.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        aTable.register(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
         view.addSubview(aTable)
         return aTable
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
@@ -41,6 +44,7 @@ class ProductListViewController: UIViewController {
         productListTableView.separatorColor = .systemYellow
         title = "Busqueda"
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+     
     }
     
     private func setupConstraints() {
@@ -49,7 +53,7 @@ class ProductListViewController: UIViewController {
             productSearchBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             productSearchBar.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             
-            productListTableView.topAnchor.constraint(equalTo: productSearchBar.bottomAnchor, constant: 20),
+            productListTableView.topAnchor.constraint(equalTo: productSearchBar.bottomAnchor, constant: viewMargin),
             productListTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             productListTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             productListTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
@@ -57,40 +61,27 @@ class ProductListViewController: UIViewController {
     }
 }
 
-extension ProductListViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return list.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = list[indexPath.row].title
-        return cell
-    }
-}
-
-extension ProductListViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let detailViewController = ProductDetailViewController()
-        navigationController?.pushViewController(detailViewController, animated: true)
-        
-        detailViewController.productPrice.text = list[indexPath.row].price?.description
-        detailViewController.productTitle.text = list[indexPath.row].title
-        if let url = list[indexPath.row].thumbnail {
-            detailViewController.productImage.loadImage(url: url)
-        }
-    }
-}
-
 extension ProductListViewController: UISearchBarDelegate {
+   
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
         guard let text = searchBar.text else { return }
-        ApiManager.shared.getList(query: text) { [weak self] data in
+        service.getList(query: text) { [weak self] data in
             self?.list = data
+            
             DispatchQueue.main.async {
                 self?.productListTableView.reloadData()
             }
+        } errorHandler: { [weak self] error in
+            self?.showError(error)
         }
     }
+    
+    private func showError(_ error: Error?) {
+        let alert = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
 }
+
+

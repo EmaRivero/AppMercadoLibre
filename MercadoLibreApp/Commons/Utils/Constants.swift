@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 struct Constants {
     static let urlSearch = "https://api.mercadolibre.com/sites/MLA/search?q="
 }

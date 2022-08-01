@@ -10,6 +10,9 @@ import SwiftUI
 
 class ProductDetailViewController: UIViewController {
     
+    var product: Product?
+    var viewMargin: CGFloat = 20
+    
     lazy var productImage: UIImageView = {
         let aImage = UIImageView()
         aImage.translatesAutoresizingMaskIntoConstraints = false
@@ -24,6 +27,7 @@ class ProductDetailViewController: UIViewController {
         aLabel.translatesAutoresizingMaskIntoConstraints = false
         aLabel.numberOfLines = 0
         view.addSubview(aLabel)
+        aLabel.textAlignment = .center
         return aLabel
     }()
     
@@ -31,6 +35,7 @@ class ProductDetailViewController: UIViewController {
         let aLabel = UILabel()
         aLabel.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(aLabel)
+        aLabel.textAlignment = .center
         return aLabel
     }()
     
@@ -46,18 +51,26 @@ class ProductDetailViewController: UIViewController {
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            productImage.widthAnchor.constraint(equalToConstant: 300),
-            productImage.heightAnchor.constraint(equalToConstant: 300),
+            productImage.widthAnchor.constraint(equalToConstant: 240),
+            productImage.heightAnchor.constraint(equalToConstant: 240),
             productImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             productImage.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             
-            productPrice.topAnchor.constraint(equalTo: productImage.bottomAnchor, constant: 20),
-            productPrice.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            productTitle.bottomAnchor.constraint(equalTo: productImage.topAnchor, constant: -viewMargin),
+            productTitle.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: viewMargin),
+            productTitle.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -viewMargin),
             
-            productTitle.topAnchor.constraint(equalTo: productImage.bottomAnchor, constant: 40),
-            productTitle.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            productTitle.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
-            productTitle.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
+            productPrice.topAnchor.constraint(equalTo: productImage.bottomAnchor, constant: viewMargin),
+            productPrice.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
     }
+    public func setupProduct(product: Product) {
+        productTitle.text = product.title
+        productPrice.text = product.price?.description
+        if let url = product.thumbnail {
+            productImage.loadImage(url: url)
+        }
+        setupView()
+    }
 }
+
