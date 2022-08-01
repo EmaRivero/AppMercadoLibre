@@ -44,7 +44,6 @@ class ProductListViewController: UIViewController {
         productListTableView.separatorColor = .systemYellow
         title = "Busqueda"
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-     
     }
     
     private func setupConstraints() {
