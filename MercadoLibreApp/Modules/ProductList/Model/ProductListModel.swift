@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ProductListService {
+class ProductListModel {
     func getList(query: String, completionHandler: @escaping ([Product]) -> Void, errorHandler: @escaping (Error?) -> Void) {
         
         ApiManager.shared.getCall(query: query) { response in
@@ -18,7 +18,7 @@ class ProductListService {
                 let result = try decoder.decode(ProductList.self, from: data)
                 completionHandler(result.results)
             } catch {
-                print(error.localizedDescription)
+                errorHandler(error)
             }
         } errorHandler: { error in
             errorHandler(error)

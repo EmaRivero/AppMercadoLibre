@@ -12,7 +12,7 @@ class ProductDetailViewController: UIViewController {
     var product: Product?
     var viewMargin: CGFloat = 20
     
-    lazy var productImage: UIImageView = {
+    private lazy var productImage: UIImageView = {
         let aImage = UIImageView()
         aImage.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(aImage)
@@ -21,7 +21,7 @@ class ProductDetailViewController: UIViewController {
         return aImage
     }()
     
-    lazy var productTitle: UILabel = {
+    private lazy var productTitle: UILabel = {
         let aLabel = UILabel()
         aLabel.translatesAutoresizingMaskIntoConstraints = false
         aLabel.numberOfLines = 0
@@ -30,7 +30,7 @@ class ProductDetailViewController: UIViewController {
         return aLabel
     }()
     
-    lazy var productPrice: UILabel = {
+    private lazy var productPrice: UILabel = {
         let aLabel = UILabel()
         aLabel.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(aLabel)
@@ -50,8 +50,8 @@ class ProductDetailViewController: UIViewController {
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            productImage.widthAnchor.constraint(equalToConstant: 240),
-            productImage.heightAnchor.constraint(equalToConstant: 240),
+            productImage.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5),
+            productImage.heightAnchor.constraint(equalTo: productImage.widthAnchor, multiplier: 1),
             productImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             productImage.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             
@@ -66,7 +66,8 @@ class ProductDetailViewController: UIViewController {
     
     public func setupProduct(product: Product) {
         productTitle.text = product.title
-        productPrice.text = product.price?.description
+        guard let price = product.price else {return}
+        productPrice.text = "$\(price)"
         if let url = product.thumbnail {
             productImage.loadImage(url: url)
         }

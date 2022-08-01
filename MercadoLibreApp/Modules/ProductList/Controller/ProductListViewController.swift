@@ -11,7 +11,7 @@ class ProductListViewController: UIViewController {
     
     var list: [Product] = []
     let cellIdentifier = "cellIdentifier"
-    var service = ProductListService()
+    var model = ProductListModel()
     var viewMargin: CGFloat = 20
     
     private lazy var productSearchBar: UISearchBar = {
@@ -20,6 +20,15 @@ class ProductListViewController: UIViewController {
         aSearch.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(aSearch)
         return aSearch
+    }()
+    
+    private lazy var searchButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Buscar", for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.titleLabel?.tintColor = .white
+        view.addSubview(button)
+        return button
     }()
     
     private lazy var productListTableView: UITableView = {
@@ -41,15 +50,24 @@ class ProductListViewController: UIViewController {
         setupConstraints()
         productSearchBar.barTintColor = .systemYellow
         productListTableView.separatorColor = .systemYellow
+        searchButton.backgroundColor = .systemBlue
+        searchButton.addTarget(self, action: #selector(findProduct), for: .touchUpInside)
         title = "Busqueda"
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
     }
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
+            
+            searchButton.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor),
+            searchButton.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            searchButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.25),
+            
             productSearchBar.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor),
             productSearchBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            productSearchBar.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            productSearchBar.trailingAnchor.constraint(equalTo: searchButton.leadingAnchor, constant: -viewMargin),
+            
+            searchButton.heightAnchor.constraint(equalTo: productSearchBar.heightAnchor),
             
             productListTableView.topAnchor.constraint(equalTo: productSearchBar.bottomAnchor, constant: viewMargin),
             productListTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -57,15 +75,11 @@ class ProductListViewController: UIViewController {
             productListTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
-}
-
-extension ProductListViewController: UISearchBarDelegate {
     
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.resignFirstResponder()
-        guard let text = searchBar.text else { return }
-        
-        service.getList(query: text) { [weak self] data in
+    @objc
+    private func findProduct() {
+        guard let text = productSearchBar.text else { return }
+        model.getList(query: text) { [weak self] data in
             self?.list = data
             DispatchQueue.main.async {
                 self?.productListTableView.reloadData()
@@ -79,6 +93,14 @@ extension ProductListViewController: UISearchBarDelegate {
         let alert = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
+    }
+}
+
+extension ProductListViewController: UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        findProduct()
     }
 }
 
