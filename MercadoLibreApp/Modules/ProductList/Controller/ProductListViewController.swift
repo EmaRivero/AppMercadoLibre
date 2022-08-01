@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Alamofire
 
 class ProductListViewController: UIViewController {
     
@@ -61,13 +60,13 @@ class ProductListViewController: UIViewController {
 }
 
 extension ProductListViewController: UISearchBarDelegate {
-   
+    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
         guard let text = searchBar.text else { return }
+        
         service.getList(query: text) { [weak self] data in
             self?.list = data
-            
             DispatchQueue.main.async {
                 self?.productListTableView.reloadData()
             }

@@ -14,7 +14,7 @@ class ApiManager {
     
     func getCall(query: String, completionHandler: @escaping (AFDataResponse<Data?>) -> Void, errorHandler: @escaping (AFError) -> Void) {
         let url = "\(Constants.urlSearch)\(query)"
-
+        
         AF.request(url).validate().response { response in
             if let error = response.error {
                 errorHandler(error)

@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SwiftUI
 
 class ProductDetailViewController: UIViewController {
     
@@ -64,6 +63,7 @@ class ProductDetailViewController: UIViewController {
             productPrice.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
     }
+    
     public func setupProduct(product: Product) {
         productTitle.text = product.title
         productPrice.text = product.price?.description
